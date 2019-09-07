@@ -79,6 +79,9 @@ ARG AMPL=http://ampl.com/demo/ampl.linux64.tgz
 # uncompressed into /opt by the ADD command.
 # The script find_ampl.sh tries to ensure that /opt/ampl
 # will point to a directory containing the ampl binaries.
+
+USER root
+
 ADD ${AMPL} /opt
 RUN chmod 777 /opt/ampl.linux64.tgz
 COPY scripts /opt/scripts
@@ -88,8 +91,10 @@ RUN /opt/scripts/find_ampl.sh
 ENV PATH /opt/miniconda/bin:/opt/ampl:$PATH
 ENV LANG C.UTF-8
 
+USER $NB_UID
+
 # ipython/jupyter configurations
 EXPOSE 8888
 
 WORKDIR /root
-CMD ["/opt/scripts/start_notebook.sh"]
+#CMD ["/opt/scripts/start_notebook.sh"]
