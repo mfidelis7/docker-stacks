@@ -80,6 +80,7 @@ ARG AMPL=http://ampl.com/demo/ampl.linux64.tgz
 # The script find_ampl.sh tries to ensure that /opt/ampl
 # will point to a directory containing the ampl binaries.
 ADD ${AMPL} /opt
+RUN chmod 777 /opt/ampl.linux64.tgz
 COPY scripts /opt/scripts
 RUN /opt/scripts/find_ampl.sh 
 
