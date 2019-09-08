@@ -68,7 +68,7 @@ RUN cd /tmp && wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-
     && chmod +x Miniconda3-latest-Linux-x86_64.sh \
     && bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/miniconda \
     && rm Miniconda3-latest-Linux-x86_64.sh \
-    && /opt/miniconda/bin/conda install python=3.6 jupyter ipython matplotlib pandas -y \
+    && /opt/miniconda/bin/conda install python=3.6 ipython matplotlib pandas -y \
     && /opt/miniconda/bin/conda clean --all -y \
     && /opt/miniconda/bin/pip install amplpy
 
