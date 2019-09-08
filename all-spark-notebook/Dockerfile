@@ -96,5 +96,5 @@ USER $NB_UID
 # ipython/jupyter configurations
 EXPOSE 8888
 
-WORKDIR /root
+#WORKDIR /root
 #CMD ["/opt/scripts/start_notebook.sh"]
